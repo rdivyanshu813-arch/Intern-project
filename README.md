@@ -28,10 +28,8 @@ Open `http://localhost:8000`. A local HTTP server is needed for service worker a
 
 ## Publish with GitHub Pages
 
-1. Create a GitHub repository named `waypoint-travel-planner`.
-2. Add and push the contents of this folder to the repository's `main` branch.
-3. In **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-4. Wait for the Pages build; the published URL will appear in the Pages settings.
+1. In **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
+2. Wait for the Pages build; the published URL will appear in the Pages settings.
 
 The included `.nojekyll` file supports a straightforward root deployment. No API keys or backend are required. Google Fonts are used when online; the system falls back to local sans-serif fonts offline.
 
@@ -57,4 +55,4 @@ See [REPORT.md](REPORT.md) for the project report draft and presentation outline
 
 ## Credits
 
-Project concept and implementation: Divyanshu Raj. This is an independent educational portfolio project. No travel data or external APIs are used.
+This is an independent educational portfolio project. No travel data or external APIs are used.
