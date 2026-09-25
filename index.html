@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="Plan thoughtful trips, one day at a time. An application development internship project.">
+  <title>Waypoint — Travel, thoughtfully planned</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Waypoint home"><span class="brand-mark">w</span><span>waypoint<span class="brand-dot">.</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <button class="nav-item active" data-view="home"><span class="nav-icon">▦</span> My trips <span id="trip-count" class="nav-count">0</span></button>
+      <button class="nav-item" data-view="discover"><span class="nav-icon">⌕</span> Discover</button>
+      <div class="sidebar-rule"></div>
+      <div class="workspace-label trip-list-heading">YOUR JOURNEYS <button class="text-icon" id="quick-add" aria-label="Add trip">＋</button></div>
+      <div id="trip-nav" class="trip-nav"></div>
+      <div class="sidebar-bottom"><div class="avatar">WP</div><div><strong>Your workspace</strong><small>Application Development Project</small></div><span class="more-dots">···</span></div>
+    </aside>
+
+    <main id="home" class="main-content">
+      <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong>My trips</strong></div><div class="top-actions"><button id="export-btn" class="button button-quiet" title="Download a backup of all trips">↓ <span>Export</span></button><button id="new-trip-top" class="button button-dark">＋ <span>New trip</span></button></div></header>
+      <section class="hero"><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR PERSONAL TRAVEL SPACE</div><h1>Make room for<br><em>the way there.</em></h1><p>Good trips start with a little daydreaming.<br>Keep the details together and leave space for the unexpected.</p></div><div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="art-path"></div><div class="art-pin">✦</div><span class="art-caption">SOMEWHERE NEW</span></div></section>
+      <section class="trip-section" aria-labelledby="trip-heading"><div class="section-heading"><div><div class="eyebrow muted-eyebrow">A GOOD THING TO LOOK FORWARD TO</div><h2 id="trip-heading">Your journeys <span id="trip-heading-count"></span></h2></div><div class="filter-group" role="group" aria-label="Filter trips"><button class="filter-button active" data-filter="upcoming">Upcoming</button><button class="filter-button" data-filter="all">All trips</button></div></div>
+        <div id="trip-grid" class="trip-grid"></div>
+        <div id="empty-state" class="empty-state" hidden><div class="empty-illustration">✳</div><h3>Your next story starts here.</h3><p>Add a destination and give yourself something lovely to look forward to.</p><button class="button button-dark" id="empty-add">＋ Plan a trip</button></div>
+      </section>
+      <footer class="app-footer"><span>Thoughtfully planned with <span class="heart">♥</span> and a little curiosity.</span><span>WAYPOINT · INTERNSHIP PROJECT 2026</span></footer>
+    </main>
+  </div>
+
+  <dialog id="trip-dialog" class="dialog"><form id="trip-form" method="dialog"><div class="dialog-top"><div><div class="eyebrow muted-eyebrow">A NEW ADVENTURE</div><h2 id="trip-dialog-title">Plan a trip</h2></div><button type="button" class="close-button" data-close aria-label="Close">×</button></div><input type="hidden" name="id"><label>Where to? <input name="destination" required maxlength="60" placeholder="e.g. Kyoto, Japan"></label><div class="form-row"><label>Start date <input type="date" name="startDate" required></label><label>End date <input type="date" name="endDate" required></label></div><label>Cover photo URL <input name="cover" type="url" placeholder="https://… (optional)"></label><label>A little note <textarea name="note" rows="2" maxlength="160" placeholder="What are you looking forward to?"></textarea></label><div class="dialog-actions"><button type="button" class="button button-quiet" data-close>Cancel</button><button class="button button-dark" type="submit">Save trip <span>→</span></button></div></form></dialog>
+  <dialog id="detail-dialog" class="dialog detail-dialog"><div id="detail-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "Waypoint — Travel Itinerary Planner",
+  "short_name": "Waypoint",
+  "description": "A thoughtful travel itinerary planner internship project.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f7f3",
+  "theme_color": "#f8f7f3",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
